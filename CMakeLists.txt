@@ -6,6 +6,10 @@ find_package(Qt5 REQUIRED
     Core
     Qml
     )
+# prevent error "You must build your code with position independent code if Qt was built with..
+if (Qt5_POSITION_INDEPENDENT_CODE)
+  SET(CMAKE_POSITION_INDEPENDENT_CODE ON)
+endif()
 
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_INCLUDE_CURRENT_DIR ON) # This is to find generated *.moc and *.h files in build dir
