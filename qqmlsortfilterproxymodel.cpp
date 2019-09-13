@@ -26,7 +26,8 @@ namespace qqsfpm {
 */
 
 QQmlSortFilterProxyModel::QQmlSortFilterProxyModel(QObject* parent)
-    QSortFilterProxyModel(parent),
+    : QSortFilterProxyModel(parent)
+    ,
 #ifdef SFPM_DELAYED
     m_delayed(true)
 #else
